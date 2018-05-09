@@ -1,4 +1,4 @@
-const name = () => 'DYZIO--OOO';
-const Hello = `Hello World from ${name()} Game.js`;
+const name = () => 'DYZIO';
+const Hello = `Hello ${name()} from Game.js`;
 
 export default Hello;
