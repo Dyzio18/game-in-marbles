@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+require("babel-core/register");
+require("babel-polyfill");
 
 const config = {
     entry: './src/app.js',
@@ -17,7 +19,7 @@ const config = {
             exclude: '/node_modules/',
             loader: 'babel-loader',
             query: {
-              presets: ['es2015', 'es2016', 'es2017']
+                presets: ['es2015', 'es2016', 'es2017','stage-0']
             }
         }
       ]

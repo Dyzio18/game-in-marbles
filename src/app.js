@@ -1,3 +1,4 @@
-import Hello from './Game';
+import { setView } from './controllers/viewController';
+import startView from './views/startView';
 
-document.getElementById('root').innerHTML = Hello;
+setView(startView);

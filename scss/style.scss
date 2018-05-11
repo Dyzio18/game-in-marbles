@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+@import './variable';
+
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee url("../static/memphis-colorful.png"); 
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+
+@import './tile';
+@import './ball';
+@import './button';
+@import './views/welcome';
+@import './views/gameBoard';

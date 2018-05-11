@@ -1,0 +1,26 @@
+.gamePanel{
+    height: 100%;
+    //background: #eee;
+
+    .gameBoard{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .gameBoard{
+        width: 600px;
+    }
+}
+
+
+@media only screen and (max-width: 620px) {
+    .gameBoard{
+        width: 300px;
+    }
+}
