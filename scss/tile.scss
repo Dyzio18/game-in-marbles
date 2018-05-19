@@ -1,3 +1,5 @@
+@import './variable';
+
 .tile{
     display: flex;
     justify-content: center;
@@ -6,23 +8,35 @@
     height: 50px;
     margin: 0;
     box-sizing: border-box;
-    background: #ddd;
-
-    color: #999;/*DEV*/
-    text-align: center;/*DEV*/
-    font-size: 10px; /*DEV*/
-    
-    border: 2px solid #666;
+    background: #ddd;    
+    border: 1px solid #666;
     cursor: pointer;
     transition: .5s; 
 }
 
 .tile:hover{
-    background: rgb(235, 88, 88);
+    background: rgb(241, 158, 158);
     transition: .5s;
 }
 
-.test{
-    background: rgb(78, 63, 214);
-    transition: .5s; 
+.tile--active{
+    animation-name: tileActiveAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes tileActiveAnimation {
+    0%   {background-color:red;}
+    25%  {background-color:yellow;}
+    50%  {background-color:blue;}
+    75%  {background-color:green;}
+    100% {background-color:red;}
+}
+
+
+@media only screen and (max-width: $sm) {
+    .tile{
+        width: 25px;
+        height: 25px;
+    }
 }

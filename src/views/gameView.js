@@ -1,16 +1,17 @@
 import Board from './../components/Board';
 import Color from './../components/Colors';
+import { state } from '../controllers/gameController';
 
 function gameView(){
     const view = document.createElement('div');
     view.className = 'gamePanel';
 
-    const board = new Board(12);
-    const colors = new Color();
+    const board = new Board(state.size);
+    const colors = new Color(state.colors);
 
-    board.boardGenerate(12).then((tiles)=>{
+    board.boardGenerate().then((tiles)=>{
         view.appendChild(tiles);
-        board.randomBallGenerate(12, colors);
+        board.initBalls(12, colors);
     })
 
     return view;

@@ -1,4 +1,4 @@
-const button = (id, text, className = "btn btn__normal", action, ...keys) => {
+const button = (id, text, className, action, ...keys) => {
     const btn = document.createElement('button');
     btn.className = className;
     btn.id = id;

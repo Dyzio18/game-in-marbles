@@ -1,3 +1,5 @@
+import { findPath } from '../controllers/gameController';
+
 class Tile {
 
     constructor(row, col, ballObj){
@@ -9,15 +11,22 @@ class Tile {
     tileHTML(){
         const tile = document.createElement('div');
         tile.className = 'tile';
+        tile.id = `row-${this.row}-col-${this.col}`;
         tile.setAttribute("data-row", this.row);
         tile.setAttribute("data-col", this.col);
         tile.setAttribute("data-ball", this.ballObj);
         //tile.textContent = `${this.row}/${this.col}`; //DEV
 
+        tile.addEventListener('mouseenter', ()=>{
+            const start = document.getElementsByClassName('tile--active')[0];
+            if(start){                               
+                // TODO: if tile is empty
+                findPath(start.id, tile.id);
+            }
+        });
+
         return tile;
     }
-
-
 }
 
 export default Tile;

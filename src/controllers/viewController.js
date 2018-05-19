@@ -1,8 +1,7 @@
-const setView = (view) => {
+const renderView = (view) => {
     const root = document.getElementById('root');
     root.innerHTML = '';
     root.appendChild(view());
 }
 
-
-export {setView};
+export default renderView;

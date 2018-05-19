@@ -7,15 +7,16 @@ class Board {
         this.size = size;
     }
 
-    boardGenerate(size){
+    boardGenerate(){
         const generatedBoard = new Promise(resolve =>{
             const board = document.createElement('div');
             board.className = 'gameBoard';
 
-            for(let j = 0; j<size; j++){
+            for(let j = 0; j<this.size; j++){
                 const row = document.createElement('div');
-                for(let i = 0; i<size; i++){
-                    const tile = new Tile(j,i,'obj');
+                row.className = 'row';
+                for(let i = 0; i<this.size; i++){
+                    const tile = new Tile(j,i,{});
                     row.appendChild(tile.tileHTML())
                 }
                 board.appendChild(row)
@@ -26,7 +27,7 @@ class Board {
         return generatedBoard;
     }
 
-    randomBallGenerate(count, colors){
+    initBalls(count, colors){
         const boardLength = this.size * this.size;
         const tileArr = [...document.getElementsByClassName('tile')];
 
