@@ -3,9 +3,9 @@ Desktop game in marbles, written using JS and Electron.js
 Game can be also avaible via website.
 
 
-![demo1](./static/img/welcome.png?raw=true "welcome")
+![demo1](/static/img/welcome.png?raw=true "welcome")
 
-![demo2](./static/img/board.png?raw=true "board")
+![demo2](/static/img/board.png?raw=true "board")
 
 
 [IN PROGRESS]
