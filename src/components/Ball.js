@@ -21,8 +21,6 @@ class Ball {
             ball.setAttribute("data-active",true);
         });
 
-
-
         return ball;
     }
 

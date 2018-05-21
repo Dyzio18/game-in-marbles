@@ -21,16 +21,14 @@
 
 .tile--active{
     animation-name: tileActiveAnimation;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
 }
 
 @keyframes tileActiveAnimation {
-    0%   {background-color:red;}
-    25%  {background-color:yellow;}
-    50%  {background-color:blue;}
-    75%  {background-color:green;}
-    100% {background-color:red;}
+    0%   {background-color:rgb(194, 193, 193);}
+    50%  {background-color:rgb(255, 108, 108);}
+    100%   {background-color:rgb(194, 193, 193);}
 }
 
 

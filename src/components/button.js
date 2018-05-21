@@ -1,3 +1,7 @@
+/**
+ * Create <DOM element>
+ */
+
 const button = (id, text, className, action, ...keys) => {
     const btn = document.createElement('button');
     btn.className = className;
