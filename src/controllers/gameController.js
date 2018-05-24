@@ -8,7 +8,7 @@ const state = {
     graph: new Graph(12),
     score: 0,
     repeat: 5,
-    ballCounter:10
+    ballCounter:3
 }
 
 function setSize(value){
