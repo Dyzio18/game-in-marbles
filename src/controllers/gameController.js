@@ -1,17 +1,18 @@
 import Graph from '../components/Graph';
 import { tileToPoint } from '../common/helpers';
+import BFS from '../common/shortestPath';
 
-/**
- * App state(size,colors counter, current graph)
- */
 const state = {
-    size:12,
+    size: 12,
     colors:4,
-    graph: new Graph(12)
+    graph: new Graph(12),
+    score: 0,
+    repeat: 5,
+    ballCounter:10
 }
 
 function setSize(value){
-    state.size = value;
+    state.size = parseInt(value);
     setInitGraph(value);
 } 
 
@@ -23,15 +24,22 @@ function setColors(value){
     state.colors = value;
 }
 
-function findPath(startId, endId) {
-    const start = document.getElementById(startId);
-    const end = document.getElementById(endId);
-    
-    console.log(tileToPoint(start).col);
-
-    // DEV: Update GRAPH
-    //state.graph.update();
-    console.log(state.graph);
+function changeScore(value){
+    state.score += value;
+    const points = document.getElementById('points');
+    points.innerHTML = `Wynik: ${state.score}`;
 }
 
-export {state, setColors, setSize, findPath};
+function findPath(startId, endId) {
+    const start = tileToPoint(document.getElementById(startId));
+    const end = tileToPoint(document.getElementById(endId));
+    state.graph.update();
+    const distance = BFS(state.graph.graph, start, end);
+
+    if(distance > 0)
+        return distance;
+    else
+        return 0;
+}
+
+export {state, setColors, setSize, changeScore, findPath};

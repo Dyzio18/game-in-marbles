@@ -1,5 +1,6 @@
 import Tile from './Tile';
 import Ball from './Ball';
+import {score} from '../controllers/gameController';
 
 class Board {
 
@@ -16,7 +17,7 @@ class Board {
                 const row = document.createElement('div');
                 row.className = 'row';
                 for(let i = 0; i<this.size; i++){
-                    const tile = new Tile(j,i,{});
+                    const tile = new Tile(j,i,false, null);
                     row.appendChild(tile.tileHTML())
                 }
                 board.appendChild(row)
@@ -35,7 +36,10 @@ class Board {
             const elem = tileArr[Math.floor(Math.random() * boardLength)];
             const ball = new Ball(colors.randColor());
 
-            if(elem.childNodes.length === 0) elem.appendChild(ball.ballHTML());
+            if(elem.childNodes.length === 0) {
+                elem.appendChild(ball.ballHTML());
+                elem.setAttribute("data-color", ball.color);
+            }
             else i--;   
         }
     }

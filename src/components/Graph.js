@@ -8,8 +8,8 @@ import { tileToPoint } from '../common/helpers';
 class Graph {
 
     constructor(size){
-        this.size = size;
-        this.graph = this.init(size);
+        this.size = parseInt(size);
+        this.graph = this.init(parseInt(size));
     }
 
     init(size) { 
@@ -29,7 +29,7 @@ class Graph {
                 this.graph[row][col] = 0;
             else 
                 this.graph[row][col] = 1;
-        })       
+        }) 
     }
 
     getGraph(){
